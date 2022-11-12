@@ -4,6 +4,11 @@ Currently experimenting and planning! More Features will be added soon...
 
 Developed by Bharat Adhikari (c) 2022
 
+```
+#Installation: pip install python_splitter
+
+```
+
 ## Examples of How To Use (Buggy Alpha Version)
 
 Creating Train-Test folders
