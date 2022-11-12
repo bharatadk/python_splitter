@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: python-splitter
+Version: 0.0.1
+Summary: A package  that Splits Class_Folders to Train, Test, Val folders automatically by shuffling media for machine learning.
+Home-page: https://github.com/bharatadk/python_splitter
+Author: Bharat Adhikari
+Author-email: bharatadk.on@gmail.com
+Keywords: folder,splitter
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# python_splitter
+
+Currently experimenting and planning! More Features will be added soon...
+
+Developed by Bharat Adhikari (c) 2022
+
+## Examples of How To Use (Buggy Alpha Version)
+
+Creating Train-Test folders
+
+```python
+
+import python_splitter
+
+$ python_splitter.split_from_folder("SOURCE_FOLDER", train = 0.5, test = 0.3, val = 0.2)
+$ python_splitter.split_from_folder("SOURCE_FOLDER", train = 0.5, test = 0.3)
+
+# Note: Both above code gives same result because 0.5+0.3=0.8 . 
+	   So, val = 0.2 is calculated automatically.
+
+
+$ python_splitter.split_from_folder("SOURCE_FOLDER, train = 0.5, test = 0.5)
+But, this will not create "val" folder because train+test=0.5+0.5 =1.0
+
+# SOURCE_FOLDER = PATH_TO_THE_FOLDER_CONTAINING_IMAGE_CLASSES_FOLDERS
+
+```
