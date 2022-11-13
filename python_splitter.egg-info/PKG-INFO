@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: python-splitter
-Version: 0.0.1
+Version: 0.0.3
 Summary: A package  that Splits Class_Folders to Train, Test, Val folders automatically by shuffling media for machine learning.
 Home-page: https://github.com/bharatadk/python_splitter
 Author: Bharat Adhikari

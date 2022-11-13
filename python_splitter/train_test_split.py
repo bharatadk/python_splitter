@@ -2,10 +2,10 @@ import os
 import glob
 import numpy as np
 import shutil
+import re
 
 
 class Train_test_split_class(object):
-    
     def __init__(self):
         self.root_folder = ""
         self.new_root = "Train_Test_Folder"
@@ -16,23 +16,24 @@ class Train_test_split_class(object):
 
     # class methods
 
-
     def generate_classes(self):
         self.classes = [
             name
             for name in os.listdir(self.root_folder)
-            if os.path.isdir(os.path.join(self.root_folder, name)) and name !="__pycache__"
+            if os.path.isdir(os.path.join(self.root_folder, name))
+            and name != "__pycache__"
         ]
 
     def path_validation(self):
-        print("Checking SOURCE directory...")
+
         isExist = os.path.exists(self.root_folder)
         if isExist:
+
             return
-        raise Exception(" 🐞 The SOURCE PATH doesn't exits")
+        raise Exception("🐞The SOURCE PATH doesn't exits")
 
     def make_directories(self):
-        print("Making required directories...")
+
         if os.path.exists(self.new_root):
             shutil.rmtree(self.new_root)
         for cls in self.classes:
@@ -41,30 +42,28 @@ class Train_test_split_class(object):
 
             if self.val_per > 0:
                 os.makedirs(os.path.join(self.new_root, "val", cls))
+
         return
 
     def validation_per(self):
-        print("Checking percentage validation...")
+
         print(self.train_per, self.val_per, self.test_per)
 
         if 0 < self.train_per < 1 and 0 < self.test_per < 1 and 0 <= self.val_per < 1:
-            print("inseide")
 
             if (self.train_per + self.test_per) < 1.0 and self.val_per == 0:
                 self.val_per = 1.0 - (self.train_per + self.test_per)
 
             if (self.train_per + self.test_per + self.val_per) == 1.0:
-                print("Validation Success")
+                return
 
             else:
-                ex = "🐞 The sum of train,test,split percentage is greater than 1 or 100%. \n Please adjust the train,test,val parameters again."
+                ex = "🐞The sum of train,test,split percentage is greater than 1 or 100%. \n Please adjust the train,test,val parameters again."
                 raise Exception(ex)
 
         return
 
     def shuffle_and_copy_images(self):
-        print("Shuffling data...")
-        print("Getting ready for copying files...")
 
         ## creating partition of the data after shuffeling
         for cls in self.classes:
@@ -128,12 +127,24 @@ def split_from_folder(root_folder_path, train=0.8, test=None, val=None):
             obj.val_per = val
 
         obj.generate_classes()
-        obj.validation_per()
-        obj.make_directories()
-        obj.shuffle_and_copy_images()
+        print("✅Checking SOURCE directory...")
 
-        print("✅Successfully , splitted !")
+        obj.validation_per()
+        print("✅Checking percentage validation...")
+
+        obj.make_directories()
+        print("✅Making required directories...")
+
+        obj.shuffle_and_copy_images()
+        print("✅Shuffling data...")
+        print("✅Getting ready for copying files...")
+
+        print("\n-------------Successfully splitted !!!--------------- ")
 
     except:
-        ex = "!!! 🐞 Some error occured during generation . Please review your code"
+        ex = "🐞 Some error occured during generation . Please review your code"
         raise Exception(ex)
+
+
+
+

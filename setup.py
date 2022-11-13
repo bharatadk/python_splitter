@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="python_splitter",
-    version="0.0.1",
+    version="0.0.3",
     author="Bharat Adhikari",
     author_email="bharatadk.on@gmail.com",
     description="A package  that Splits Class_Folders to Train, Test, Val folders automatically by shuffling media for machine learning.",

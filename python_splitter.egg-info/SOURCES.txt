@@ -2,6 +2,7 @@ LICENSE
 README.md
 setup.py
 python_splitter/__init__.py
+python_splitter/image_grouping.py
 python_splitter/train_test_split.py
 python_splitter.egg-info/PKG-INFO
 python_splitter.egg-info/SOURCES.txt

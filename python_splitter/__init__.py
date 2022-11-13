@@ -1,1 +1,2 @@
 from python_splitter.train_test_split import split_from_folder
+from python_splitter.image_grouping import image_to_class
