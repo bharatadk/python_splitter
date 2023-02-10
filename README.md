@@ -5,7 +5,8 @@ Currently experimenting and planning! More Features will be added soon...
 Developed by Bharat Adhikari (c) 2022
 
 ```
-#Installation: pip install python_splitter
+#Installation:
+pip install python_splitter
 
 ```
 
