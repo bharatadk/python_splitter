@@ -5,15 +5,6 @@ Currently experimenting and planning! More Features will be added soon...
 Developed by Bharat Adhikari (c) 2022
 
 ```
-#Contributors
-<!-- Copy-paste in your Readme.md file -->
-
-<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = GitHub_username/repository_name"/>
-</a>
-
-Made with [contributors-img](https://contrib.rocks).
-
 #Installation:
 pip install python_splitter
 
@@ -50,3 +41,12 @@ But, this will not create "val" folder because train+test=0.5+0.5 =1.0
 
 ```
 ![image](https://user-images.githubusercontent.com/51126350/201512419-305e313a-6e15-4c8c-892e-e34dec3f732e.png)
+
+#Contributors
+<!-- Copy-paste in your Readme.md file -->
+
+<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo = GitHub_username/repository_name"/>
+</a>
+
+Made with [contributors-img](https://contrib.rocks).
