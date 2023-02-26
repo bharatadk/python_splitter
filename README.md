@@ -55,4 +55,3 @@ But, this will not create "val" folder because train+test=0.5+0.5 =1.0
   <img src="https://contrib.rocks/image?repo=bharatadk/python_splitter" />
 </a>
 
-Made with [contrib.rocks](https://contrib.rocks).
