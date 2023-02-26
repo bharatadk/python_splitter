@@ -1,3 +1,11 @@
+<div align="center">
+  <br>
+  <img alt="Open Sauced" src="https://i.ibb.co/7jPXt0Z/logo1-92f1a87f.png" width="300px">
+  <h1>🍕 Open Sauced 🍕</h1>
+  <strong>The path to your next Open Source contribution</strong>
+</div>
+<br>
+
 # python_splitter
 
 Currently experimenting and planning! More Features will be added soon...
