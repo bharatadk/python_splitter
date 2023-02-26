@@ -45,8 +45,7 @@ But, this will not create "val" folder because train+test=0.5+0.5 =1.0
 #Contributors
 <!-- Copy-paste in your Readme.md file -->
 
-<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
+<a href = "https://github.com/bharatadk/python_splitter/contributors">
   <img src = "https://contrib.rocks/image?repo = GitHub_username/repository_name"/>
 </a>
 
-Made with [contributors-img](https://contrib.rocks).
