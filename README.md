@@ -46,6 +46,6 @@ But, this will not create "val" folder because train+test=0.5+0.5 =1.0
 <!-- Copy-paste in your Readme.md file -->
 
 <a href = "https://github.com/bharatadk/python_splitter/contributors">
-  <img src = "https://contrib.rocks/image?repo = GitHub_username/repository_name"/>
+  <img src = "https://contrib.rocks/image?repo = bharatadk/python_splitter"/>
 </a>
 
