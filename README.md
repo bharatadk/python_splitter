@@ -42,13 +42,43 @@ But, this will not create "val" folder because train+test=0.5+0.5 =1.0
 ![image](https://user-images.githubusercontent.com/51126350/201512419-305e313a-6e15-4c8c-892e-e34dec3f732e.png)
 
 ## Starred By
-[Anuj-Gupta4](https://github.com/Anuj-Gupta4)
-<img src='https://avatars.githubusercontent.com/u/84966248?v=4' width='25' height='25' style='border-radius: 50%;'>
-[bharatadhik](https://github.com/bharatadhik)
-<img src='https://avatars.githubusercontent.com/u/97297013?v=4' width='25' height='25' style='border-radius: 50%;'>
-[bertlandh](https://github.com/bertlandh)
-<img src='https://avatars.githubusercontent.com/u/27841491?v=4' width='25' height='25' style='border-radius: 50%;'>
-[bharatadk](https://github.com/bharatadk)
-<img src='https://avatars.githubusercontent.com/u/51126350?v=4' width='25' height='25' style='border-radius: 50%;'>
-[phuongnguyen194](https://github.com/phuongnguyen194)
-<img src='https://avatars.githubusercontent.com/u/94124578?v=4' width='25' height='25' style='border-radius: 50%;'>
+![Image of Anuj-Gupta4](<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+)
+![Image of bharatadhik](<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+)
+![Image of bertlandh](<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+)
+![Image of bharatadk](<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+)
+![Image of phuongnguyen194](<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+)
