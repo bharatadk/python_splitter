@@ -4,8 +4,12 @@ import numpy as np
 import shutil
 import re
 
+
 class Image_grouping_class(object):
     def __init__(self):
+        """
+        Initializes an instance of the Image_grouping_class.
+        """
         self.root_folder = ""
         self.new_source = "NEW_SOURCE_FOLDER"
         self.all_files = []
@@ -26,6 +30,12 @@ class Image_grouping_class(object):
         )
 
     def generate_classes(self):
+        """
+        Generates class list from filenames of root directory.
+        Returns
+        -------
+        None
+        """
 
         self.all_files = os.listdir(root_folder)
         mapper = {}
@@ -45,7 +55,13 @@ class Image_grouping_class(object):
         del self.all_files
 
     def make_directories(self):
-
+        """
+        Creates directories for the extracted Classes of Images.
+        Raises
+        ------
+        OSError
+            If the directories already exist or cannot be created.
+        """
         # Remove previous "NEW_SOURCE_FOLDER" if exists
         if os.path.exists(self.new_source):
             shutil.rmtree(self.new_source)
@@ -54,6 +70,10 @@ class Image_grouping_class(object):
             os.makedirs(os.path.join(self.new_source, cls))
 
     def copy_files(self):
+        """
+        Copy images to respective class folders.
+
+        """
 
         for file in self.all_image_files:
             file_name_without_extension = file.split(".")[0]
@@ -64,10 +84,16 @@ class Image_grouping_class(object):
             )
 
 
-
-
 def image_to_class(root_folder_path):
-
+    """
+    Parameters
+    ----------
+    root_folder_path : str
+        The path to the root directory containing subdirectories with images.
+    Notes
+    -----
+    The image names of same class should have same prefix followed by numbers which could be numbers
+    """
     try:
 
         obj = Image_grouping_class()
