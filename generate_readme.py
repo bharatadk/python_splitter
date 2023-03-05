@@ -40,7 +40,7 @@ if "## Starred By" in content:
 # Append the list of stargazers and their images to the end of the README.md file
 content += "## Starred By\n"
 for i, stargazer in enumerate(stargazers):
-    content += f"<img src='data:image/png;base64,{rounded_avatars[i].decode('utf-8')}' width='{size}' height='{size}' style='border-radius:50%'>\n"
+    content += f"<img src='data:image/png;base64,{rounded_avatars[i].decode('utf-8')}' width='{size}' height='{size}' style='border-radius:50%'>\t"
 
 
 # Write the updated content to the README.md file
