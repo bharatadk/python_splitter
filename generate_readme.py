@@ -12,7 +12,7 @@ stargazers = response.json()
 
 # Extract the avatar URLs for each stargazer
 avatars = [stargazer["avatar_url"] for stargazer in stargazers]
-random.shuffle(avatars)
+avatars = avatars[::-1]
 
 # Get the current content of the README.md file
 with open("README.md", "r") as file:
