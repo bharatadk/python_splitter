@@ -7,6 +7,9 @@ import re
 
 class Train_test_split_class(object):
     def __init__(self):
+        """
+        Initializes an instance of the Train_test_split_class.
+        """
         self.root_folder = ""
         self.new_root = "Train_Test_Folder"
         self.classes = []
@@ -17,6 +20,14 @@ class Train_test_split_class(object):
     # class methods
 
     def generate_classes(self):
+        """
+        Generates class list from subfolders of root directory.
+
+        Returns
+        -------
+        classes : list
+            A list of class names extracted from the subfolders of the root directory.
+        """
         self.classes = [
             name
             for name in os.listdir(self.root_folder)
@@ -25,7 +36,14 @@ class Train_test_split_class(object):
         ]
 
     def path_validation(self):
+        """
+        Validates the paths of the root directory and the subdirectories.
 
+        Raises
+        ------
+        ValueError
+            If the root directory or subdirectories do not exist.
+        """
         isExist = os.path.exists(self.root_folder)
         if isExist:
 
@@ -33,7 +51,14 @@ class Train_test_split_class(object):
         raise Exception("🐞The SOURCE PATH doesn't exits")
 
     def make_directories(self):
+        """
+        Creates directories for the train, test and validation sets.
 
+        Raises
+        ------
+        OSError
+            If the directories already exist or cannot be created.
+        """
         if os.path.exists(self.new_root):
             shutil.rmtree(self.new_root)
         for cls in self.classes:
@@ -46,7 +71,13 @@ class Train_test_split_class(object):
         return
 
     def validation_per(self):
+        """
+        Calculates the percentage of validation set based on the train set.
 
+        Returns
+        -------
+        None
+        """
         print(self.train_per, self.val_per, self.test_per)
 
         if 0 < self.train_per < 1 and 0 < self.test_per < 1 and 0 <= self.val_per < 1:
@@ -64,7 +95,10 @@ class Train_test_split_class(object):
         return
 
     def shuffle_and_copy_images(self):
+        """
+        Shuffles the images and copies them to the respective train, test and validation folders.
 
+        """
         ## creating partition of the data after shuffeling
         for cls in self.classes:
             src = os.path.join(self.root_folder, cls)  # root_folder to copy images from
@@ -72,9 +106,6 @@ class Train_test_split_class(object):
             allFileNames = os.listdir(src)
 
             np.random.shuffle(allFileNames)
-
-            ## E.g.here 0.75 = training ratio , (0.95-0.75) = validation ratio , (1-0.95) =
-            ##training ratio
 
             if self.val_per == 0:
                 train_FileNames, test_FileNames = np.split(
@@ -89,7 +120,7 @@ class Train_test_split_class(object):
                     ],
                 )
 
-            # #Converting file names from array to list
+            ##Converting file names from array to list
 
             train_FileNames = [
                 os.path.join(src, filename) for filename in train_FileNames
@@ -117,6 +148,28 @@ class Train_test_split_class(object):
 
 
 def split_from_folder(root_folder_path, train=0.8, test=None, val=None):
+    """
+    Parameters
+    ----------
+    root_folder_path : str
+        The path to the root directory containing subdirectories with images.
+    train : float, optional
+        The percentage of images to be used for training (default is 0.8).
+    test : float, optional
+        The percentage of images to be used for testing (default is None).
+    val : float, optional
+        The percentage of images to be used for validation (default is None).
+
+    Raises
+    ------
+    ValueError
+        If the sum of train, test and validation percentages is not equal to 1.
+
+    Notes
+    -----
+    At least one of test or val must be provided. If only test is provided, the remaining images will be used for validation.
+    If both test and val are provided, they will be used as specified and train will be calculated accordingly.
+    """
     try:
         obj = Train_test_split_class()
         obj.root_folder = root_folder_path
@@ -144,7 +197,3 @@ def split_from_folder(root_folder_path, train=0.8, test=None, val=None):
     except:
         ex = "🐞 Some error occured during generation . Please review your code"
         raise Exception(ex)
-
-
-
-
