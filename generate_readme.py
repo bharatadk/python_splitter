@@ -9,8 +9,8 @@ response = requests.get(f"https://api.github.com/repos/{owner}/{repo}/stargazers
 stargazers = response.json()
 
 # Extract the avatar URLs and profile URLs for each stargazer
-avatars = [stargazer["avatar_url"] for stargazer in stargazers]
-profiles = [stargazer["html_url"] for stargazer in stargazers]
+avatars = [stargazer["user"]["avatar_url"] for stargazer in stargazers]
+profiles = [stargazer["user"]["html_url"] for stargazer in stargazers]
 
 # Generate the resized and rounded avatar images using Pillow
 size = 25
