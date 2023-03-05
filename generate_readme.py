@@ -16,14 +16,14 @@ with open("README.md", "r") as file:
     content = file.read()
 
 # Delete the existing stargazers list from the README.md file
-if "## Starred By\n\n" in content:
-    content = content.split("## Starred By\n\n")[0]
+if "## Starred By" in content:
+    content = content.split("## Starred By")[0]
 
 # Append the list of stargazers and their images to the end of the README.md file
-content += "\n## Starred By\n\n"
+content += "## Starred By\n"
 for i, stargazer in enumerate(stargazers):
-    content += f"{i+1}. [{stargazer['login']}]({stargazer['html_url']})\n"
-    content += f"   ![Image of {stargazer['login']}]({avatars[i]})\n"
+    content += f"[{stargazer['login']}]({stargazer['html_url']})\n"
+    content += f"<img src='{avatars[i]}' width='25' height='25' style='border-radius: 50%;'>\n"
 
 # Write the updated content to the README.md file
 with open("README.md", "w") as file:
