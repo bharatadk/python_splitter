@@ -8,18 +8,26 @@ repo = "python_splitter"
 response = requests.get(f"https://api.github.com/repos/{owner}/{repo}/stargazers")
 stargazers = response.json()
 
-# Extract the avatar URLs for each stargazer
+# Extract the avatar URLs and profile URLs for each stargazer
 avatars = [stargazer["avatar_url"] for stargazer in stargazers]
+profiles = [stargazer["html_url"] for stargazer in stargazers]
 
-# Generate the rounded avatar images using Avatarify
-avatarify_url = "https://avatarify.ai/avatar"
-avatarify_params = {"url": "", "size": 25, "round": True}
+# Generate the resized and rounded avatar images using Pillow
+size = 25
 rounded_avatars = []
 for avatar in avatars:
-    avatarify_params["url"] = avatar
-    response = requests.get(avatarify_url, params=avatarify_params)
-    rounded_avatar = response.content.decode("utf-8")
-    rounded_avatars.append(rounded_avatar)
+    response = requests.get(avatar)
+    image = Image.open(BytesIO(response.content))
+    image = image.resize((size, size))
+    bigsize = (image.size[0] * 3, image.size[1] * 3)
+    mask = Image.new('L', bigsize, 0)
+    draw = ImageDraw.Draw(mask) 
+    draw.ellipse((0, 0) + bigsize, fill=255)
+    mask = mask.resize(image.size, Image.ANTIALIAS)
+    image.putalpha(mask)
+    rounded_avatar = BytesIO()
+    image.save(rounded_avatar, format='png')
+    rounded_avatars.append(rounded_avatar.getvalue())
 
 # Get the current content of the README.md file
 with open("README.md", "r") as file:
@@ -32,7 +40,7 @@ if "## Starred By" in content:
 # Append the list of stargazers and their images to the end of the README.md file
 content += "## Starred By\n"
 for i, stargazer in enumerate(stargazers):
-    content +=f"![Image of {stargazer['login']}]({rounded_avatars[i]})\n"
+    content += f"<img src='data:image/png;base64,{rounded_avatars[i].decode('utf-8')}' width='{size}' height='{size}' style='border-radius:50%'>\n"
 
 
 # Write the updated content to the README.md file
