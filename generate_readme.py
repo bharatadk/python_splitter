@@ -32,7 +32,7 @@ if "## Starred By" in content:
 # Append the list of stargazers and their images to the end of the README.md file
 content += "## Starred By\n"
 for i, stargazer in enumerate(stargazers):
-    content +=f"[![Image of {stargazer['login']}]({rounded_avatars[i]})]({profiles[i]})\n"
+    content +=f"![Image of {stargazer['login']}]({rounded_avatars[i]})\n"
 
 
 # Write the updated content to the README.md file
