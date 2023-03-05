@@ -1,4 +1,5 @@
 import requests
+import random
 
 # Set the repository owner and name
 owner = "bharatadk"
@@ -10,6 +11,7 @@ stargazers = response.json()
 
 # Extract the avatar URLs for each stargazer
 avatars = [stargazer["avatar_url"] for stargazer in stargazers]
+random.shuffle(avatars)
 
 # Get the current content of the README.md file
 with open("README.md", "r") as file:
@@ -23,7 +25,6 @@ if "## Starred By" in content:
 content += "## Starred By\n"
 for i, stargazer in enumerate(stargazers):
     content += f"<img src='{avatars[i]}' width='25' height='25'>\t"
-content += "\n 👏👏👏"
 
 # Write the updated content to the README.md file
 with open("README.md", "w") as file:
