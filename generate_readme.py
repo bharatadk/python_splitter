@@ -6,7 +6,8 @@ owner = "bharatadk"
 repo = "python_splitter"
 
 # Get the list of users who have starred the repository using the GitHub API
-response = requests.get(f"https://api.github.com/repos/{owner}/{repo}/stargazers")
+headers = {"Accept": "application/vnd.github.v3+json"}
+response = requests.get(f"https://api.github.com/repos/{owner}/{repo}/stargazers", headers=headers)
 stargazers = response.json()
 
 # Extract the avatar URLs for each stargazer
