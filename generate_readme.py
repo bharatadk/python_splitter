@@ -42,6 +42,7 @@ content += "## Starred By\n"
 for i, stargazer in enumerate(stargazers):
     content += f"<img src='data:image/png;base64,{rounded_avatars[i].decode('utf-8')}' width='{size}' height='{size}' style='border-radius:50%'>\t"
 
+content += "👏👏👏"
 
 # Write the updated content to the README.md file
 with open("README.md", "w") as file:
