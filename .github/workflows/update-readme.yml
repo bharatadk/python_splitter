@@ -21,7 +21,7 @@ jobs:
           using: 'node16'
 
       - name: Install dependencies
-        run:  pip install requests Pillow
+        run:  pip install requests
 
       - name: Generate README
         run: python generate_readme.py
