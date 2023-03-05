@@ -8,6 +8,9 @@ repo = "python_splitter"
 response = requests.get(f"https://api.github.com/repos/{owner}/{repo}/stargazers")
 stargazers = response.json()
 
+# Extract the avatar URLs for each stargazer
+avatars = [stargazer["avatar_url"] for stargazer in stargazers]
+
 # Get the current content of the README.md file
 with open("README.md", "r") as file:
     content = file.read()
