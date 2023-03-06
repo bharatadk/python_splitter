@@ -11,7 +11,7 @@ response = requests.get(f"https://api.github.com/repos/{owner}/{repo}/stargazers
 stargazers = response.json()
 
 # Extract the avatar URLs for each stargazer
-avatars = [stargazer.get('avatar_url') for stargazer in stargazers]
+avatars = [stargazer.json.['avatar_url'] for stargazer in stargazers]
 avatars = avatars[::-1]
 
 # Get the current content of the README.md file
