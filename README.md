@@ -1,3 +1,5 @@
+[![Downloads](https://static.pepy.tech/personalized-badge/python-splitter?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/python-splitter)
+
 <div align="center">
   <br>
   <img alt="Open Sauced" src="https://i.ibb.co/7jPXt0Z/logo1-92f1a87f.png" width="300px">
