@@ -8,8 +8,6 @@
 </div>
 <br>
 
-# python_splitter
-
 Currently experimenting and planning! More Features will be added soon...
 
 Developed by Bharat Adhikari (c) 2022
